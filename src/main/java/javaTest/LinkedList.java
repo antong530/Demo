@@ -1,4 +1,4 @@
-package java;
+package javaTest;
 
 /**
  * Created by antong on 16/7/18.
@@ -31,13 +31,22 @@ public class LinkedList<T> {
     public void delete(Node node) {
         while (firstNode.next != null) {
             Node n = firstNode.next;
-            if (n == node) {
-                Object item = n.next.value;
-                n.value = item;
+            if (n.next == node) {
                 n.next = n.next.next;
-
+                break;
             }
+            firstNode = n;
         }
+    }
 
+    public void insert(Node fromNode, Node node) {
+        while (firstNode.next != null) {
+            Node n = firstNode.next;
+            if (n == fromNode) {
+                node.next = n.next;
+                n.next = node;
+            }
+            firstNode = n;
+        }
     }
 }
