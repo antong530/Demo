@@ -11,19 +11,19 @@
         http://www.springframework.org/schema/context/spring-context-3.0.xsd
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
-       <bean id="name" class="SpringTest.name"></bean>
-       <aop:aspectj-autoproxy/>
+    <bean id="name" class="SpringTest.name"></bean>
+    <bean class="SpringTest.BeanPostProccessorTest"></bean>
     <!-- 给datasource注册事物管理器 ， 然后确定事务管理器切面 ，然后确定事物管理器切点-->
     <!--<bean id="manager" class="org.springframework.transaction.support.">-->
-        <!--<property name="dataSource" ref=""/>-->
-            <!--</bean>-->
+    <!--<property name="dataSource" ref=""/>-->
+    <!--</bean>-->
     <!--<tx:advice id="txadvice" transaction-manager="manager">-->
-        <!--<tx:attributes>-->
-            <!--<tx:method name="create*" propagation="REQUIRED" read-only="false"/>-->
-        <!--</tx:attributes>-->
-            <!--</tx:advice>-->
+    <!--<tx:attributes>-->
+    <!--<tx:method name="create*" propagation="REQUIRED" read-only="false"/>-->
+    <!--</tx:attributes>-->
+    <!--</tx:advice>-->
     <!--<aop:config>-->
-        <!--<aop:pointcut id="daoMethod" expression="execution(* com.dao.*.*(..))"/>-->
-        <!--<aop:advisor pointcut-ref="daoMethod" advice-ref="txadvice"/>-->
+    <!--<aop:pointcut id="daoMethod" expression="execution(* com.dao.*.*(..))"/>-->
+    <!--<aop:advisor pointcut-ref="daoMethod" advice-ref="txadvice"/>-->
     <!--</aop:config>-->
 </beans>
